@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Interactive rating component</title>
+    <style>
+      * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+#background {
+  background-color: hsl(216, 12%, 8%);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+#main {
+  position: absolute;
+  height: 60%;
+  width: 30%;
+  color: white;
+  background-color: hsl(213, 19%, 18%);
+  border-radius: 30px;
+  padding: 25px;
+  left: 35%;
+  top: 20%;
+  z-index: 1;
+}
+
+#main h2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#main p{
+    color: hsl(217, 12%, 63%);
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+#main button{
+    border-radius: 20px;
+    font-size: 20px;
+    width: 100%;
+    background-color: hsl(25, 97%, 53%);
+    color: white;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+#ratings{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.rating{
+    background-color: hsl(217, 12%, 63%);
+    width: 80%;
+    height: 40%;
+    border-radius: 50%;
+    text-align: center;
+}
+
+#thankyou {
+  position: absolute;
+  height: 60%;
+  width: 30%;
+  color: white;
+  background-color: hsl(213, 19%, 18%);
+  border-radius: 30px;
+  padding: 20px;
+  left: 35%;
+  top: 20%;
+  text-align: center;
+  z-index: 0;
+}
+
+#thankyou img{
+    margin: 20px;
+}
+
+#thankyou h1{
+    font-size: 25px;
+    padding: 10px;
+
+}
+
+#thankyou p{
+    color: hsl(217, 12%, 63%);
+    font-size: 15px;
+}
+
+#selectedrating{
+  border-radius: 30px;
+  background-color: hsl(217, 12%, 63%);
+  font-size: 20px;
+  width: 90%;
+  padding-block-end: 20px;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="background">
+      <div id="main">
+        <div id="topleftstar">
+          <img src="images/icon-star.svg" alt="" />
+        </div>
+        <div id="question">
+          <h2>How did we do?</h2>
+        </div>
+        <div id="request">
+          <p>
+            Please let us know how we did with your support request. All
+            feedback is appreciated to help us improve our offering!
+          </p>
+        </div>
+        <div id="ratings">
+          <div class="rating" onclick="setRating(1)"><h2>1</h2></div>
+          <div class="rating" onclick="setRating(2)"><h2>2</h2></div>
+          <div class="rating" onclick="setRating(3)"><h2>3</h2></div>
+          <div class="rating" onclick="setRating(4)"><h2>4</h2></div>
+          <div class="rating" onclick="setRating(5)"><h2>5</h2></div>
+        </div>
+        <div id="submit-button">
+          <button>Submit</button>
+        </div>
+      </div>
+      <div id="thankyou">
+        <img src="images/illustration-thank-you.svg" alt="" />
+        <div id="selectedrating">
+          
+        </div>
+        <h1>Thank you!</h1>
+        <p>
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don't hesitate to get in touch!
+        </p>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Ana Fariya</a>.
+    </div>
+    <script>
+      
+var selectedRating = 0;
+
+function setRating(rating) {
+    selectedRating = rating;
+    updateSelectedRatingText();
+}
+
+function updateSelectedRatingText() {
+    var selectedRatingText =""
+
+    
+        selectedRatingText = "You selected " + selectedRating + " stars out of 5.";
+    
+
+    document.getElementById("selectedrating").innerText = selectedRatingText;
+    document.getElementById("selectedrating").style.color = "hsl(25, 97%, 53%)";
+    document.getElementById("thankyou").style.zIndex = 2;
+}
+
+    </script>
+  </body>
+</html>
