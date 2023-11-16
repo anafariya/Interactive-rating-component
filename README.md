@@ -29,12 +29,13 @@ Users should be able to:
 
 ### Screenshot
 
-![Interactive Rating Component](./screenshot.jpg)
+![Interactive Rating Component]![Screenshot (39)](https://github.com/anafariya/Interactive-rating-component/assets/70438803/5c86cb0c-5a0c-41ad-8702-bbab4bc035e2)
+
 
 ### Links
 
-- [Solution URL](https://your-solution-url.com)
-- [Live Site URL](https://your-live-site-url.com)
+- [Solution URL]https://github.com/anafariya/Interactive-rating-component
+- [Live Site URL]https://anafariya.github.io/Interactive-rating-component/
 
 ## My process
 
